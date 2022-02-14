@@ -9,7 +9,7 @@ device = input('')
 if device.lower() == 'usb':
     def MountDetector():
         print("Comprobando si el disco esta montado")
-        mountpoint = subprocess.check_output("findmnt -S /dev/sda | grep /media", shell=True)
+        mountpoint = subprocess.check_output("findmnt -S /dev/sdb | grep /media", shell=True)
         mountpointconf = subprocess.check_output("lsblk | grep /media", shell=True)
         if bool(mountpoint) and bool(mountpointconf) == True:
             print("El disco esta montado!")
